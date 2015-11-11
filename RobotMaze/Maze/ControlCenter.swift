@@ -27,7 +27,7 @@ class ControlCenter {
         
         // Step 2c
         // TODO: Save the return value of checkWalls() to a constant called myWallInfo.
-        
+        let myWallInfo = self.checkWalls(myRobot)
         
         // Step 3a
         // Categorize the robot's current location based on the number of walls
@@ -134,16 +134,24 @@ class ControlCenter {
         
         // Step 2a
         // TODO: Check if there is a wall at the bottom of the current cell
-
+        let isWallBottom = cell.bottom
+        if isWallBottom {
+            numberOfWalls++
+        }
+        
         // TODO: Check if there is a wall to the left of the current cell
-
+        let isWallLeft = cell.left
+        if isWallLeft {
+            numberOfWalls++
+        }
         
         // Step 2b
         // TODO: Test the checkWalls function.
+        print(isWallUp, isWallRight, isWallBottom, isWallLeft, numberOfWalls)
         
         // TODO: Return a tuple representing the bools for top, right, down & left, and the number of walls
         // This tuple is a placeholder
-        return (false, false, false, false, 0)
+        return (isWallUp, isWallRight, isWallBottom, isWallLeft, numberOfWalls)
 
     }
     
