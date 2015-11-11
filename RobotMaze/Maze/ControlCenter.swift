@@ -19,11 +19,11 @@ class ControlCenter {
         
         // Step 1d
         // TODO: Test the isFacingWall() function. Be sure to comment out or delete your test code once you are finished testing!
-//        if robotIsBlocked {
-//                myRobot.rotateRight()
-//            } else {
-//                myRobot.move()
-//            }
+        if robotIsBlocked {
+                myRobot.rotateRight()
+            } else {
+                myRobot.move()
+            }
         
         // Step 2c
         // TODO: Save the return value of checkWalls() to a constant called myWallInfo.
