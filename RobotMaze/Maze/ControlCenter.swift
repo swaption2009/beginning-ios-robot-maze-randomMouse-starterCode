@@ -32,16 +32,19 @@ class ControlCenter {
         // Step 3a
         // Categorize the robot's current location based on the number of walls
         
-//        let isThreeWayJunction = (myWallInfo.numberOfWalls == 1)
+        let isThreeWayJunction = (myWallInfo.numberOfWalls == 1)
 
         // TODO: Define the constant, isTwoWayPath
+        let isTwoWayPath = (myWallInfo.numberOfWalls == 2)
 
         // TODO: Define the constant, isDeadEnd
-        
+        let isDeadEnd = (myWallInfo.numberOfWalls == 3)
         
         // Step 3b
         // Test whether the values of the above constants are correct
-        
+        print(isThreeWayJunction)
+        print(isTwoWayPath)
+        print(isDeadEnd)
         
         // Step 4a
         // Three-way Path - else-if statements
