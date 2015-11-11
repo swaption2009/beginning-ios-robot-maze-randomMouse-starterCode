@@ -31,7 +31,6 @@ class ControlCenter {
         
         // Step 3a
         // Categorize the robot's current location based on the number of walls
-        
         let isThreeWayJunction = (myWallInfo.numberOfWalls == 1)
 
         // TODO: Define the constant, isTwoWayPath
