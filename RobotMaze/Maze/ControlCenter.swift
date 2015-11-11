@@ -15,12 +15,15 @@ class ControlCenter {
         
         // Step 1c
         // TODO: Call the function, isFacingWall(), and define a constant to be equal to its return value. You can use the suggested constant name below--uncomment the code and add the function call.
-//        let robotIsBlocked =
-        
+        let robotIsBlocked = self.isFacingWall(myRobot, direction: myRobot.direction)
         
         // Step 1d
         // TODO: Test the isFacingWall() function. Be sure to comment out or delete your test code once you are finished testing!
-        
+//        if robotIsBlocked {
+//                myRobot.rotateRight()
+//            } else {
+//                myRobot.move()
+//            }
         
         // Step 2c
         // TODO: Save the return value of checkWalls() to a constant called myWallInfo.
@@ -107,9 +110,10 @@ class ControlCenter {
         
         // Step 1b
         // TODO: Return a Bool that represents whether the robot is currently facing a wall. You will need to change the placeholder return statement below.
+        return isWall
         
         // Placeholder
-        return false
+//        return false
     }
 
     func checkWalls(robot:ComplexRobotObject) -> (up: Bool, right: Bool, down: Bool, left: Bool, numberOfWalls: Int) {
