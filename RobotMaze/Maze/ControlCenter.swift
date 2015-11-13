@@ -65,7 +65,7 @@ class ControlCenter {
         
         // TODO: If the robot encounters a two way path and there is NO wall ahead it should continue forward.
         if isTwoWayPath && !robotIsBlocked {
-            continueStraightOrRotate(myRobot, wallInfo: myWallInfo)
+            myRobot.move()
         }
 
         // TODO: If the robot encounters a two way path and there IS a wall ahead, it should turn in the direction of the clear path.
@@ -79,23 +79,23 @@ class ControlCenter {
         
         // TODO: If the robot encounters a dead end, check whether it is blocked. If it is blocked, it should rotate. If it isn't blocked, it should move forward. Use a nested if statement here.
         if isDeadEnd && robotIsBlocked {
-            turnTowardClearPath(myRobot, wallInfo: myWallInfo)
+            myRobot.rotateRight()
         }
         
         if isDeadEnd && !robotIsBlocked {
-            continueStraightOrRotate(myRobot, wallInfo: myWallInfo)
+            myRobot.move()
         }
 
         // Step 4b
         // Uncomment below to test turnTowardClearPath()
         
-        else if !isThreeWayJunction && !robotIsBlocked {
-            myRobot.move()
-        }
-        
-        else if !isThreeWayJunction && robotIsBlocked {
-            randomlyRotateRightOrLeft(myRobot)
-        }
+//        else if !isThreeWayJunction && !robotIsBlocked {
+//            myRobot.move()
+//        }
+//
+//        else if !isThreeWayJunction && robotIsBlocked {
+//            randomlyRotateRightOrLeft(myRobot)
+//        }
     }
     
     func isFacingWall(robot: ComplexRobotObject, direction: MazeDirection) -> Bool {
@@ -208,6 +208,8 @@ class ControlCenter {
             robot.rotateRight()
         } else if robot.direction == .Down && wallInfo.right {
             robot.rotateRight()
+        } else {
+            robot.rotateLeft()
         }
     }
     
